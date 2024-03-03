@@ -16,5 +16,5 @@ echo 'Executando makemigrations.sh'
 python manage.py makemigrations --noinput
 echo 'Executando migrate.sh'
 python manage.py migrate --noinput
-python manage.py shell -c "from django.contrib.auth.models import User; User.objects.create_superuser('teste', 'teste@teste.com', 'testando@2023')" || true
+python manage.py shell -c "from django.contrib.auth.models import User; User.objects.create_superuser('david', 'allysson.david.rose@gmail.com', 'Budeli@#2021')" || true
 python manage.py runserver 0.0.0.0:8000
