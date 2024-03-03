@@ -14,11 +14,14 @@ COPY commands.sh /app/
 
 
 RUN pip install -r requirements.txt && \
-    chmod -R +x /app/commands.sh
-
+    adduser --disabled-password --no-create-home duser && \
+    chmod -R +x /app/commands.sh && \
+    chown -R duser:duser /app
 
 COPY . .
 
 EXPOSE 8000
+
+USER duser
 
 CMD [ "/app/commands.sh" ]
