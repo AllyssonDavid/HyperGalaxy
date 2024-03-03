@@ -1,0 +1,124 @@
+{% extends 'partials/_base.html' %}
+{% load static %}
+{% block content %}
+<div class="section-blog-feature">
+    <div class="padding-global">
+        <div class="container-large">
+            <div class="padding-section-medium top-padding-large">
+                <div class="blog-feature-component">
+                    <div class="blog-feature-top-content">
+                        <h2 class="heading-style-h2">Blog e recursos</h2>
+                    </div>
+                    <div class="padding-bottom padding-large"></div>
+                    <div class="w-dyn-list">
+                        {% if post_destaque %}
+                        <div role="list" class="w-dyn-items">
+                            <div role="listitem" class="w-dyn-item">
+                                <a href="{% url 'blog' %}/{{ post_destaque.slug }}" class="blog-link w-inline-block">
+                                    <div class="blog-feature-image-wrapper">
+                                        <img alt="{{post_destaque.titulo}}" loading="lazy" src="{{ post_destaque.capa.url }}" class="blog-feature-image">
+                                    </div>
+                                    <div class="padding-bottom padding-xsmall"></div>
+                                    <div class="blog-feature-top-details">
+                                        <div class="blog-category">
+                                            <div>
+                                                <p>{{ post_destaque.get_categorias_display }}</p>
+                                            </div>
+                                        </div>
+                                        <div class="blog-read-time">
+                                            <div>
+                                                <p>Ler 5 min</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="padding-bottom padding-small"></div>
+                                    <h4 class="heading-style-h4">{{ post_destaque.titulo }}</h4>
+                                </a>
+                            </div>
+                        </div>
+                        {% else %}
+                        <div class="w-dyn-empty">
+                            <div>No items found.</div>
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="section-blog">
+    <div class="padding-global">
+        <div class="container-large">
+            <div class="padding-section-medium bottom-padding-large">
+                <div class="blog-component">
+                    <div class="blog-content">
+                        <h2 data-w-id="9fef2b7c-f21f-14c4-110e-45796041c95f" class="heading-style-h2">
+                            Blog Hyper</h2>
+                        <div data-w-id="e74be52c-bd05-4afc-62f7-0c39600a63ea"
+                            class="blog-category-collection-list-wrapper w-dyn-list">
+                            <div role="list" class="blog-category-collection-list w-dyn-items">
+                                <div role="listitem" class="blog-category-collection-list-item w-dyn-item">
+                                    <a href="{% url 'blog' %}" aria-current="page"
+                                        class="blog-category-link w-inline-block w--current">
+                                        <div>Todos</div>
+                                    </a>
+                                    <a href="#" class="blog-category-link w-inline-block">
+                                        <div>Notícias</div>
+                                    </a>
+                                    <a href="#" class="blog-category-link w-inline-block">
+                                        <div>Social Mídia</div>
+                                    </a>
+                                    <a href="#" class="blog-category-link w-inline-block">
+                                        <div>Desenvolvimento</div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="padding-bottom padding-large"></div>
+                    <div data-w-id="9fef2b7c-f21f-14c4-110e-45796041c962"
+                        class="blog-collection-list-wrapper w-dyn-list">
+                        {% if object_list %}
+                        <div role="list" class="blog-collection-list w-dyn-items">
+                            {% for post in object_list %}
+                            <div role="listitem" class="blog-collection-list-item w-dyn-item">
+                                <a id="w-node-_9fef2b7c-f21f-14c4-110e-45796041c965-dd75a4f4" href="{% url 'blog' %}/{{  post.slug }}" class="blog-card w-inline-block">
+                                    <div class="blog-image-wrapper">
+                                        <img alt="{{ post.titulo }}" loading="lazy" src="{{ post.capa.url }}" class="blog-image">
+                                    </div>
+                                    <div class="blog-card-content-wrapper">
+                                        <div class="blog-card-top-content">
+                                            <div class="blog-category">
+                                                <div>
+                                                    <p>{{ post.get_categorias_display }}</p>
+                                                </div>
+                                            </div>
+                                            <div class="blog-read-time">
+                                                <div>
+                                                    Ler 5 min
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <h5 class="heading-style-h5">
+                                            {{ post.titulo }}
+                                        </h5>
+                                    </div>
+                                </a>
+                            </div>
+                            {% endfor %}
+                        </div>
+                        {% else %}
+                        <div class="w-dyn-empty">
+                            <div>No items found.</div>
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% include 'components/_cta.html' %}
+</div>
+{% endblock %}

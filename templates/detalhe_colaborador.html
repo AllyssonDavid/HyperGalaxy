@@ -1,0 +1,47 @@
+{% extends 'partials/_base.html' %}
+{% load static %}
+{% block content %}
+<div class="section-team-details">
+    <div class="padding-global">
+        <div class="container-large">
+            <div class="padding-section-large">
+                <div class="team-details-component">
+                    <div class="team-details-wrapper">
+                        <div class="team-details-top-content">
+                            <h4 bind="1590cabb-a349-35fe-07ce-ec9eddfad056" class="heading-style-h4 text-color-white">
+                                {{ funcionario.nome }}
+                            </h4>
+                            <div bind="4b5ad165-1bdd-5d4e-6633-23a10d6d70bb" class="text-size-regular text-color-gray">
+                                <p>
+                                    {{ funcionario.cargo }}
+                                </p>
+                            </div>
+                        </div>
+                        <p class="text-size-regular text-color-gray">
+                            {{ funcionario.descricao }}
+                        </p>
+                    </div>
+                    <div class="team-right-content">
+                        <img alt="{{ funcionario.nome }}" loading="lazy" src="{{ funcionario.imagem.url }}" class="team-details-image">
+                        <div class="social-icon-wrapper">
+
+                            <a href="{{ funcionario.instagram }}" class="social-link w-inline-block" target="_blank">
+                                <img src="{% static 'images/instagramsvg.svg' %}"
+                                    loading="lazy" alt="">
+                            </a>
+                            <a href="{{ funcionario.facebook }}" class="social-link w-inline-block" target="_blank">
+                                <img src="{% static 'images/_facebook.svg' %}"
+                                    loading="lazy" alt="">
+                            </a>
+                            <a href="{{ funcionario.linkedin }}" class="social-link w-inline-block" target="_blank">
+                                <img src="{% static 'images/linkedin_1linkedin.png' %}"
+                                    loading="lazy" alt="">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

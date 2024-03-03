@@ -1,0 +1,310 @@
+{% extends 'partials/_base.html' %}
+{% load static %}
+{% block content %}
+<div data-w-id="2cd5aa34-87d8-3d94-224b-69eed791bc2c" class="main-wrapper">
+  <div class="section-header">
+    <div class="padding-global">
+      <div class="header-component">
+        <div class="w-layout-grid header-grid">
+          <div id="w-node-_9dbc76a6-43ad-2785-2c5a-4e091ebc3c3c-dd75a4f0" class="header-heading-wrapper">
+            <h1 class="heading-style-h1">Trabalho que importa</h1>
+          </div>
+          <div id="w-node-e54335da-2078-7058-e94c-0f601763a0de-dd75a4f0" class="header-content-wrapper">
+            <div class="w-layout-grid header-content-grid">
+              <div id="w-node-e54335da-2078-7058-e94c-0f601763a0e0-dd75a4f0" class="header-left-content">
+                <p class="text-size-regular">Criamos aplicativos e sites excepcionais para startups web que se traduzem
+                  em crescimento de negócios</p>
+              </div>
+              <div id="w-node-e54335da-2078-7058-e94c-0f601763a0e3-dd75a4f0" class="header-content">
+                <div data-w-id="e54335da-2078-7058-e94c-0f601763a0e4" style="background-color:rgba(0,0,0,0)"
+                  class="header-arrow-button"><img src="{% static 'images/Arrow_1.svg' %}" loading="lazy"
+                    style="-webkit-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0deg) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0deg) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0deg) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0deg) skew(0, 0)"
+                    data-w-id="e54335da-2078-7058-e94c-0f601763a0e5" alt="" class="header-arrow"><img
+                    src="{% static 'images/Arrow.svg' %}" loading="lazy" style="opacity:0" alt=""
+                    class="header-arrow color-white">
+                  <div class="header-button-circle hover"></div>
+                  <div class="header-button-circle"></div>
+                </div>
+              </div>
+              <div id="w-node-e54335da-2078-7058-e94c-0f601763a0e9-dd75a4f0" class="hero-right">
+                <a href="{% url 'contato' %}" data-w-id="e54335da-2078-7058-e94c-0f601763a0ea"
+                  class="contact-button w-inline-block">
+                  <div><strong>Contate-nos</strong></div>
+                  <div style="width:100%" class="contact-button-line"></div>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div id="w-node-_4cf482ff-c557-db94-16b9-4b0607cc886a-dd75a4f0" class="header-heading-wrapper">
+            <h1 class="heading-style-h1">Para negócios em crescimento<br></h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="section-about in-home">
+    <div class="padding-global">
+      <div data-w-id="cb3cdf67-5144-3261-bfbd-b2152c7dc85e" class="about-component in-home">
+        <div class="about-qute-wrapper">
+          <div class="container-large">
+            <div class="about-content-wrapper">
+              <div id="w-node-_0d2e826c-93b6-6fa0-2146-8d3b5cf967d1-dd75a4f0" class="about-left-content">
+                <h6 class="heading-style-h6 text-color-white">Sobre HyperGalaxy</h6>
+                <div class="about-heading-line"></div>
+              </div>
+              <div id="w-node-_0d2e826c-93b6-6fa0-2146-8d3b5cf967d5-dd75a4f0" class="about-right-content">
+                <p class="text-size-large"><span class="about-words _1st">Com sede em Curitiba, a empresa se tornou uma
+                    das agências digitais da melhor qualidade. Nosso foco sempre foi criar experiências agradáveis,
+                    intuitivas, envolventes e marcantes para as pessoas – é isso que nos diferencia de todos os
+                    outros.</span></p>
+                <div class="padding-bottom padding-medium"></div>
+                <p class="text-size-large"><span class="about-words _14th">Somos uma equipe de designers especializados
+                    em desenvolver identidades visuais distintas, criar sites personalizados e lançar produtos digitais
+                    inovadores, todos projetados para capacitar equipes e impulsionar o sucesso de nossos
+                    clientes</span></p>
+                <div class="padding-bottom padding-medium"></div>
+                <a href="{% url 'sobre' %}" data-w-id="0d2e826c-93b6-6fa0-2146-8d3b5cf96811"
+                  style="border-color:rgb(99,99,99);color:rgb(99,99,99)" class="button w-inline-block">
+                  <div>Saiba Mais</div>
+                  <div style="width:0.625rem;height:0.625rem" class="button-icon-wrapper"><img
+                      src="{% static 'images/arrow-up-right.svg' %}" loading="lazy" style="opacity:0" alt=""
+                      class="button-arrow"></div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% if projetos|length >= 3 %}
+  {% include 'components/_projetos.html' with projetos=projetos %}
+  {% endif %}
+  <div class="section-service">
+    <div class="padding-global">
+      <div class="container-large">
+        <div class="padding-section-large">
+          <div class="service-component">
+            <div class="service-content">
+              <h2 class="heading-style-h2 text-color-white">Nossos Serviços</h2>
+              <div class="max-width-xsmall">
+                <p class="text-size-small">Na HyperGalaxy, estamos comprometidos em oferecer soluções inovadoras e
+                  tecnologicamente avançadas para impulsionar o seu sucesso.</p>
+              </div>
+            </div>
+            <div class="padding-bottom padding-large"></div>
+            <div class="w-layout-grid service-grid">
+              <div id="w-node-_2784f02d-3fee-3043-4084-cd21f976ade5-dd75a4f0" class="service-card _1st">
+                <div class="service-image-color-overly"></div>
+                <div class="service-card-content">
+                  <h5 class="heading-style-h5 text-color-white">Branding</h5>
+                </div>
+              </div>
+              <div id="w-node-_2784f02d-3fee-3043-4084-cd21f976ade9-dd75a4f0" class="service-card _2nd">
+                <div class="service-image-color-overly"></div>
+                <div class="service-card-content">
+                  <h5 class="heading-style-h5 text-color-white">Web Design</h5>
+                </div>
+              </div>
+              <div id="w-node-_2784f02d-3fee-3043-4084-cd21f976aded-dd75a4f0" class="service-card _3rd">
+                <div class="service-card-content">
+                  <h5 class="heading-style-h5 text-color-white"> Desenvolvimento</h5>
+                </div>
+                <div class="service-image-color-overly"></div>
+              </div>
+              <div id="w-node-_2784f02d-3fee-3043-4084-cd21f976adf1-dd75a4f0" class="service-card _4th">
+                <div class="service-image-color-overly"></div>
+                <div class="service-card-content">
+                  <h5 class="heading-style-h5 text-color-white">Marketing</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="section-brand">
+    <div class="padding-global">
+      <div class="container-large">
+        <div class="padding-section-medium top-padding-large">
+          <div data-w-id="f3919375-9da0-6eeb-32ec-c0166d952c04" class="brand-component">
+            <div class="brand-content">
+              <h6 class="heading-style-h6 text-weight-bold">Alguns de nossos clientes</h6>
+            </div>
+            <div class="padding-bottom padding-large"></div>
+            <div class="w-layout-grid inner-logo-grid"><img src="{% static 'images/Logo-01.svg' %}" loading="lazy"
+                alt="" class="logo"><img src="{% static 'images/Logo-02.svg' %}" loading="lazy" alt="" class="logo"><img
+                src="{% static 'images/Logo-02.svg' %}" loading="lazy" alt="" class="logo"><img
+                src="{% static 'images/Logo-04.svg' %}" loading="lazy" alt="" class="logo"><img
+                src="{% static 'images/Logo-03.png' %}" loading="lazy" alt="" class="logo"><img
+                src="{% static 'images/Logo-05.svg' %}" loading="lazy" alt="" class="logo"><img
+                src="{% static 'images/Logo-06.svg' %}" loading="lazy" alt="" class="logo"><img
+                src="{% static 'images/Logo-07.svg' %}" loading="lazy" alt="" class="logo"><img
+                src="{% static 'images/Logo-08.svg' %}" loading="lazy" alt="" class="logo"><img
+                src="{% static 'images/Logo-09.png' %}" loading="lazy" alt="" class="logo"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="section-testimoinal">
+    <div class="padding-global">
+      <div class="container-large">
+        <div class="padding-section-medium bottom-padding-large">
+          <div data-w-id="570f0ebd-9e79-e475-a712-bccd173ddb0d" class="testimoinal-component">
+            <div class="testimoinal-content">
+              <h5 class="heading-style-h5">Feedback de nossos clientes</h5>
+            </div>
+            <div data-delay="4000" data-animation="slide" class="testimonial-slider w-slider" data-autoplay="false"
+              data-easing="ease" data-hide-arrows="false" data-disable-swipe="false" data-autoplay-limit="0"
+              data-nav-spacing="3" data-duration="500" data-infinite="true">
+              <div class="w-slider-mask">
+                <div class="testimonial-slide w-slide">
+                  <div class="testimoinal-slider-top-content">
+                    <div class="testimonial-line"></div>
+                    <div class="text-size-regular">Spa Paragon LLC</div>
+                  </div>
+                  <div class="padding-bottom padding-xsmall"></div>
+                  <p class="text-size-large text-color-black">“Ficamos felizes por termos encontrado a melhor agência de
+                    UI/UX Design e a melhor agência de design de produto para trabalhar. Definitivamente continuaremos a
+                    trabalhar com eles, pois temos o maior resultado.”</p>
+                </div>
+                <div class="testimonial-slide w-slide">
+                  <div class="testimoinal-slider-top-content">
+                    <div class="testimonial-line"></div>
+                    <div class="feedback-author">Spa Paragon LLC</div>
+                  </div>
+                  <div class="padding-bottom padding-xsmall"></div>
+                  <p class="text-size-large text-color-black">
+                    “O trabalho da HyperGalaxy é impressionante. É a base da nossa plataforma, e seu design e
+                    documentação detalhados simplificam o desenvolvimento. Sua criatividade e conhecimento de mercado se
+                    destacaram.”</p>
+                </div>
+                <div class="testimonial-slide w-slide">
+                  <div class="testimoinal-slider-top-content">
+                    <div class="testimonial-line"></div>
+                    <div class="feedback-author">Spa Paragon LLC</div>
+                  </div>
+                  <div class="padding-bottom padding-xsmall"></div>
+                  <p class="text-size-large text-color-black">“A HyperGalaxy desenvolveu um roteiro de produtos, fluxos
+                    de usuários, wireframes e designs de alta fidelidade, todos ajustados aos requisitos exclusivos de
+                    nossos três grupos de usuários, priorizando a facilidade de uso. Melhor empresa de design.</p>
+                </div>
+                <div class="testimonial-slide w-slide">
+                  <div class="testimoinal-slider-top-content">
+                    <div class="testimonial-line"></div>
+                    <div class="feedback-author">Spa Paragon LLC</div>
+                  </div>
+                  <div class="padding-bottom padding-xsmall"></div>
+                  <p class="text-size-large text-color-black">“A HyperGalaxy entregou conteúdo rapidamente em duas
+                    semanas, atendendo às expectativas do cliente e gerenciando o fluxo de trabalho e a comunicação de
+                    forma eficiente e positiva.</p>
+                </div>
+              </div>
+              <div class="testimonial-slider-arrow-wrapper w-slider-arrow-left">
+                <div class="testimonial-slider-arrow"><img src="{% static 'images/arrow-right.svg' %}" loading="lazy"
+                    alt=""></div>
+              </div>
+              <div class="testimonial-slider-arrow-wrapper w-slider-arrow-right">
+                <div class="testimonial-slider-arrow"><img src="{% static 'images/Arrow-Left.svg' %}" loading="lazy"
+                    alt=""></div>
+              </div>
+              <div class="testimonial-slide-nav w-slider-nav w-round"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="section-team">
+    <div class="padding-global">
+      <div class="container-large">
+        <div class="padding-section-large">
+          <div class="team-content-wrapper">
+            <h2 class="heading-style-h2 text-color-white">Nossas estrelas</h2>
+          </div>
+          <div class="padding-bottom padding-large"></div>
+          <div role="list" class="team-collection-list w-dyn-items">
+            {% if funcionarios %}
+            <!--Componente avatar-->
+            {% for funcionario in funcionarios %}
+            {% include 'components/_avatar.html' with funcionario=funcionario %}
+            {% endfor %}
+            {% else %}
+            <div class="w-dyn-empty">
+              <div>Nenhum item encontrado.</div>
+            </div>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="section-blog">
+    <div class="padding-global">
+      <div class="container-large">
+        <div class="padding-section-large">
+          <div class="blog-component">
+            <div class="blog-content">
+              <h2 class="heading-style-h2">Aprendizados e insights</h2>
+            </div>
+            <div class="padding-bottom padding-large"></div>
+            <div class="blog-collection-list-wrapper w-dyn-list">
+              {% if posts %}
+              <div role="list" class="blog-collection-list w-dyn-items">
+                {% for post in posts %}
+                <div role="listitem" class="blog-collection-list-item w-dyn-item">
+                  <a id="w-node-_1056a08e-031b-e72c-2f9f-fd119f442700-dd75a4f0" href="{% url 'blog' %}/{{ post.slug }}"
+                    class="blog-card w-inline-block">
+                    <div class="blog-image-wrapper">
+                      <img alt="{{ post.titulo }}" loading="lazy" src="{{ post.capa.url }}" class="blog-image">
+                    </div>
+                    <div class="blog-card-content-wrapper">
+                      <div class="blog-card-top-content">
+                        <div class="blog-category">
+                          <div>
+                            <p>
+                              {{ post.get_categorias_display }}
+                            </p>
+                          </div>
+                        </div>
+                        <div class="blog-read-time">
+                          <div>
+                            <p>
+                              Ler 5 min
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      <h5 class="heading-style-h5">
+                        {{ post.titulo }}
+                      </h5>
+                    </div>
+                  </a>
+                </div>
+                {% endfor %}
+              </div>
+              {% else %}
+              <div class="w-dyn-empty">
+                <div>Nenhum item encontrado.</div>
+              </div>
+              {% endif %}
+            </div>
+            <div class="padding-bottom padding-large"></div>
+            <a href="{% url 'blog' %}" data-w-id="3d912216-7962-b420-8be4-a7eb738446d3"
+              style="border-color:rgb(68,68,68);color:rgb(68,68,68)" class="button is-black w-inline-block">
+              <div>Ver tudo</div>
+              <div style="background-color:rgb(68,68,68);width:0.625rem;height:0.625rem"
+                class="button-icon-wrapper is-black"><img
+                  src="{% static 'images/64572cfd77e1a6cc5762cfab_arrow-up-right.svg' %}" loading="lazy"
+                  style="opacity:0" alt="" class="button-arrow is-black"></div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% include 'components/_cta.html' %}
+</div>
+{% endblock %}

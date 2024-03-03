@@ -1,0 +1,8 @@
+media
+venv
+.gitignore
+db.sqlite3
+docker-compose.yml
+Dockerfile
+.Dockerignore
+.env.example

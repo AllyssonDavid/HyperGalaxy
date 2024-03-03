@@ -1,0 +1,23 @@
+{% extends 'partials/_base.html' %}
+{% load static %}
+{% block content %}
+<div class="main-wrapper">
+    <div class="section-404">
+        <div class="padding-global">
+            <div class="container-large">
+                <div class="_404-component"><img src="{% static 'images/404.png' %}" alt="" class="_404-image">
+                    <div class="padding-bottom padding-small"></div>
+                    <h4 class="heading-style-h4">Página não encontrada</h4>
+                    <div class="padding-bottom padding-xsmall"></div>
+                    <div class="text-size-regular">A pagina que você tentou acessar &#x27;não existe ou foi movida!
+                    </div>
+                    <div class="padding-bottom padding-small"></div>
+                    <a href="{% url 'index' %}" bind="81d127d3-0d42-2878-3f7a-aa33e5ee83a4" class="button second w-button">
+                        Voltar para home
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

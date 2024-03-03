@@ -1,0 +1,18 @@
+<div role="listitem" class="team-collection-list-item w-dyn-item">
+    <a href="{% url 'equipe' %}/{{ funcionario.id }}" class="team-link w-inline-block">
+        <div class="team-member-image-wrapper">
+            <img alt="{{ funcionario.nome }}" loading="lazy" src="{{ funcionario.imagem.url }}"
+                class="team-member-image">
+        </div>
+        <div class="team-content">
+            <h5 class="heading-style-h5 text-color-white">
+                {{ funcionario.nome }}
+            </h5>
+            <div class="text-size-regular text-color-gray">
+                <p>
+                    {{ funcionario.cargo }}
+                </p>
+            </div>
+        </div>
+    </a>
+</div>

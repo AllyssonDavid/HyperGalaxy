@@ -1,0 +1,81 @@
+{% load static %}
+<div class="section-project">
+    <div data-w-id="1c92dadd-24fe-f382-3ea0-382ef193824b" class="project-tracker">
+        <div class="project-component in-home">
+            <div class="project-content-wrapper in-home">
+                <div class="project-left-content in-home">
+                    <div class="project-heading-wrapper">
+                        <h2 class="heading-style-h2 is-project">Nossos projetos</h2>
+                    </div>
+                    <div class="is-background-white"></div>
+                </div>
+                <div class="project-right-content in-home">
+                    {% for projeto in projetos %}
+                    <div data-w-id="6aaffbe1-601f-2f86-7b11-efefc3d87c8f"
+                        class="project-collection-list-wrapper w-dyn-list">
+                        <div role="list" class="project-collection-list w-dyn-items">
+                            <div role="listitem" class="project-collection-item w-dyn-item">
+                                <div style="background-color:rgb(254,243,240)" class="project-item _4th">
+                                    <a href="{% url 'projetos' %}/{{ projeto.id }}" class="project-link w-inline-block">
+                                        <h2 class="heading-style-h2">{{ projeto.titulo }}</h2>
+                                        <div class="padding-bottom padding-small"></div>
+                                        <div class="project-image-wrapper">
+                                            <img alt="{{ projeto.titulo }}" loading="lazy" src="{{ projeto.capa.url }}"
+                                                class="project-image">
+                                            <div class="project-button">
+                                                <div>Ver <br>Projeto</div>
+                                            </div>
+                                        </div>
+                                        <div class="padding-bottom padding-xsmall"></div>
+                                        <div class="project-category">
+                                            <div>
+                                                <p>
+                                                    {{ projeto.get_categoria_display }}
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="w-dyn-empty">
+                            <div>No items found.</div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                    <div data-w-id="6aaffbe1-601f-2f86-7b11-efefc3d87c8f"
+                        class="project-collection-list-wrapper w-dyn-list">
+                        <div role="list" class="project-collection-list w-dyn-items">
+                            <div role="listitem" class="project-collection-item w-dyn-item">
+                                <div style="background-color:rgb(254,243,240)" class="project-item _4th">
+                                    <a href="{% url 'projeto-padrao' %}" class="project-link w-inline-block">
+                                        <h2 class="heading-style-h2">
+                                            Projeto padrão
+                                        </h2>
+                                        <div class="padding-bottom padding-small"></div>
+                                        <div class="project-image-wrapper">
+                                            <img alt="Projeto padrão" loading="lazy" src="{% static 'images/projetos03.png' %}"
+                                                class="project-image">
+                                            <div class="project-button">
+                                                <div>Ver <br>Projeto</div>
+                                            </div>
+                                        </div>
+                                        <div class="padding-bottom padding-xsmall"></div>
+                                        <div class="project-category">
+                                            <div>
+                                                <p>UX/UI Design</p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="w-dyn-empty">
+                            <div>No items found.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

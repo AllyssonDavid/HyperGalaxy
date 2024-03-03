@@ -1,0 +1,93 @@
+{% extends 'partials/_base.html' %}
+{% load static %}
+{% block content %}
+<div class="main-wrapper">
+    <div class="section-contact">
+        <div class="padding-global">
+            <div class="container-large">
+                <div class="padding-section-large">
+                    <div class="contact-component">
+                        <div class="contact-content">
+                            <h2 class="heading-style-h2">Olá! Basta nos contar sobre o seu projeto?</h2>
+                        </div>
+                        <div class="padding-bottom padding-large"></div>
+                        <div class="w-layout-grid contact-grid">
+                            <div id="w-node-ab9cd26f-06a2-ce7c-5ef6-96fddf4d5b0e-dd75a4f6" class="contact-left-content">
+                                <h5 class="heading-style-h5 text-color-gray">Estou interessado...</h5>
+                                <div class="contact-service-list-wrapper">
+                                    <div class="contact-service-list">
+                                        <a href="#" class="contact-service-item w-inline-block">Marca</a>
+                                        <a data-w-id="ab9cd26f-06a2-ce7c-5ef6-96fddf4d5b17" href="#"
+                                            class="contact-service-item w-inline-block">Web Design</a>
+                                        <a href="#" class="contact-service-item last w-inline-block">App Design</a>
+                                    </div>
+                                    <div class="contact-service-list">
+                                        <a href="#" class="contact-service-item w-inline-block">ilustração</a>
+                                        <a href="#" class="contact-service-item w-inline-block">Motion Design</a>
+                                        <a href="#" class="contact-service-item last w-inline-block">Pitch venda</a>
+                                    </div>
+                                    <div class="contact-service-list">
+                                        <a href="#" class="contact-service-item w-inline-block">App do zero</a>
+                                        <a href="#" class="contact-service-item last w-inline-block">Desenvolvimento
+                                            Android</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div bind="b1ee4210-185b-c50e-b20a-46db68341b97"
+                                id="w-node-ab9cd26f-06a2-ce7c-5ef6-96fddf4d5b2e-dd75a4f6"
+                                class="contact-from-block w-form">
+                                {% include 'partials/_alertas.html' %}
+                                <form id="email-form" name="email-form" data-name="Email Form"
+                                    action="{% url 'sendemail' %}" method="post" class="contact-from"
+                                    data-wf-page-id="65b427725238266edd75a4f6"
+                                    data-wf-element-id="ab9cd26f-06a2-ce7c-5ef6-96fddf4d5b2f">
+                                    {% csrf_token %}
+                                    <div id="w-node-ab9cd26f-06a2-ce7c-5ef6-96fddf4d5b30-dd75a4f6">
+                                        <label for="Nome">Seu
+                                            Nome</label>
+                                        {{ form.nome }}
+                                    </div>
+                                    <div id="w-node-ab9cd26f-06a2-ce7c-5ef6-96fddf4d5b34-dd75a4f6">
+                                        <label for="email">Seu endereço de email
+                                        </label>
+                                        {{ form.email }}
+                                    </div>
+                                    {{ form.servico }}
+                                    <div id="w-node-ab9cd26f-06a2-ce7c-5ef6-96fddf4d5b38-dd75a4f6">
+                                        <label for="Message">Conte-nos sobre seu projeto
+                                        </label>
+                                        {{ form.assunto }}
+                                    </div>
+                                    <input type="submit" data-wait="Por favor, aguarde..."
+                                        class="button second w-button" value="Enviar">
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% include 'components/_cta.html' %}
+</div>
+<script>
+    const servicos = document.querySelectorAll('.contact-service-item')
+    const servicoInput = document.getElementById('servicos')
+    let items = []
+    servicos.forEach((servico) => {
+        servico.addEventListener('click', () => {
+            const teste = items.find((element) => element == servico.textContent)
+            console.log(teste)
+            if (teste == undefined) {
+                return items.push(servico.textContent), servicoInput.value = items.join(', ')
+            }
+            let novoArray = items.filter(item => item !== servico.textContent)
+
+            return items = novoArray, servicoInput.value = items.join(', ')
+        })
+    })
+
+    
+    
+</script>
+{% endblock %}

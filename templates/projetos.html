@@ -1,0 +1,62 @@
+{% extends 'partials/_base.html' %}
+{% load static %}
+{% block content %}
+<div class="main-wrapper">
+    <div class="section-project">
+        <div class="padding-global">
+            <div class="container-large">
+                <div class="padding-section-medium top-padding-large">
+                    <div class="project-component">
+                        <div class="project-content">
+                            <h2 class="heading-style-h2 text-color-white">Nossos os Nossos Projetos
+                            </h2>
+                            <div class="padding-bottom padding-large"></div>
+                            <div class="project-category-collection-list-wrapper w-dyn-list">
+                                <div role="list" class="project-category-collection-list w-dyn-items">
+                                    <div id="w-node-_0e7d1a58-1b5f-d947-5a73-9a914f59d3ce-dd75a4fd" role="listitem"
+                                        class="project-category-collection-list-item w-dyn-item">
+                                        <a href="{% url 'projetos' %}" aria-current="page"
+                                            class="project-category in-project w--current">Todos</a>
+                                        <a href="#" class="project-category in-project"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="padding-bottom padding-large"></div>
+                        <div class="project-collection-list-wrapper w-dyn-list">
+                            {% if projetos %}
+                            <div role="list" class="project-collection-list w-dyn-items">
+                                {% for projeto in projetos %}
+                                <div role="listitem" class="project-collection-list-item w-dyn-item">
+                                    <a href="{% url 'projetos' %}/{{ projeto.id }}" class="project-link in-project w-inline-block">
+                                        <h4 class="heading-style-h4 text-color-white">
+                                            {{ projeto.titulo }}
+                                        </h4>
+                                        <div class="padding-bottom padding-xxsmall"></div>
+                                        <img alt="{{ projeto.titulo }}" loading="lazy" src="{{ projeto.capa.url }}">
+                                        <div class="padding-bottom padding-small"></div>
+                                        <div class="project-category second">
+                                            <div>
+                                                <p>
+                                                    {{ projeto.get_categoria_display }}
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                {% endfor %}
+                            </div>
+                            {% else %}
+                            <div class="w-dyn-empty">
+                                <div>Nada foi encontrado.</div>
+                            </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% include 'components/_cta.html' %}
+</div>
+{% endblock %}

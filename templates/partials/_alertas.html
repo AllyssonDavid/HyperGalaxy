@@ -1,0 +1,14 @@
+{% if messages %}
+    {% for message in messages %}
+    {% if message.tags == 'success' %}
+        <div class="success-message w-form-done" style="display: block;">
+            <div>{{ message }}</div>
+        </div>
+    {% else %}
+        <div class="error-message w-form-fail" style="display: block;">
+            <div>{{ message }}</div>
+        </div>
+    {% endif %}
+    {% endfor %}
+{% endif %}
+
