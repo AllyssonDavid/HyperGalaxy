@@ -17,6 +17,8 @@ RUN pip install -r requirements.txt && \
     adduser --disabled-password --no-create-home duser && \
     chmod -R +x /app/commands.sh && \
     chown -R duser:duser /app
+    
+RUN chmod +x /app/commands.sh
 
 COPY . .
 
